@@ -6,11 +6,12 @@ compliant hardware devices such as switches, accelerators or memory controllers.
 
 # Supported Operating System Versions
 
-- Ubuntu 23.10
-- Fedora 38, 39
+- Ubuntu 23.10 or newer
+- Fedora 38 or newer
 
-> Note: Ubuntu 22.04 is not supported. This is due to some newer PCI features that
-> are missing from the 5.15 Linux kernel that ships with Ubuntu 22.04.
+> Note: Ubuntu 22.04 is not supported. This is due to some required PCI features
+> that are missing from libpci v3.7.0 that ships with Ubuntu 22.04. 
+> libpci 3.8.0 or newer is required.
 
 # Building
 
@@ -28,6 +29,8 @@ apt install build-essential libglib2.0-dev libyaml-dev libpci-dev
 **Fedora:**
 
 ```bash
+sudo dnf groupinstall -y "Development Tools" "Development Libraries"
+sudo dnf install -y libglibutil-devel libyaml-devel libpciaccess-devel libuuid-devel
 ```
 
 2. Build Dependencies
@@ -100,4 +103,3 @@ To bind a port (or a Logical Device) to a VCS:
 ```bash
 jack port bind -p 4 -l 0 -c 0 -b 4
 ```
-
