@@ -2802,7 +2802,7 @@ static int pr_aer(int key, char *arg, struct argp_state *state)
 			o->set = 1;
 
 			// Allocate memory for the array of __u8 values 
-			o->buf = calloc(sizeof(__u8), CLMR_AER_HEADER_LEN);
+			o->buf = calloc(CLMR_AER_HEADER_LEN, sizeof(__u8));
 			o->num = parse_u8_str(o->buf, arg);
 			o->len = o->num *sizeof(__u8);
 
@@ -4280,7 +4280,7 @@ static int pr_set_ld_allocations(int key, char *arg, struct argp_state *state)
 			o->set = 1;
 
 			// Allocate memory for the array of __u64 values 
-			o->buf = calloc(sizeof(__u64), CLMR_MAX_LD);
+			o->buf = calloc(CLMR_MAX_LD, sizeof(__u64));
 
 			// Parse the commad separated string of hex values
 			o->num = parse_u64_csv(o->buf, arg);
@@ -4295,7 +4295,7 @@ static int pr_set_ld_allocations(int key, char *arg, struct argp_state *state)
 			o->set = 1;
 
 			// Allocate memory for the array of __u64 values 
-			o->buf = calloc(sizeof(__u64), CLMR_MAX_LD);
+			o->buf = calloc(CLMR_MAX_LD, sizeof(__u64));
 
 			// Parse the commad separated string of hex values
 			o->num = parse_u64_csv(o->buf, arg);;
@@ -4416,7 +4416,7 @@ static int pr_set_qos_allocated(int key, char *arg, struct argp_state *state)
 			o->set = 1;
 
 			// Allocate memory for the array of __u8 values 
-			o->buf = calloc(sizeof(__u8), CLMR_MAX_LD);
+			o->buf = calloc(CLMR_MAX_LD, sizeof(__u8));
 
 			// Parse the commad separated string of hex values
 			o->num = parse_u8_csv(o->buf, arg);
@@ -4567,7 +4567,7 @@ static int pr_set_qos_limit(int key, char *arg, struct argp_state *state)
 			o->set = 1;
 
 			// Allocate memory for the array of __u8 values 
-			o->buf = calloc(sizeof(__u8), CLMR_MAX_LD);
+			o->buf = calloc(CLMR_MAX_LD, sizeof(__u8));
 
 			// Parse the commad separated string of hex values
 			o->num = parse_u8_csv(o->buf, arg);
